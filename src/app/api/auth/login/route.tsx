@@ -6,7 +6,11 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
-    const user = await prisma.user.findUnique({ where: { email } });
+    // Find user by email
+    const user = await prisma.user.findUnique({ 
+      where: { email } 
+    });
+    
     if (!user) {
       return NextResponse.json(
         { error: 'Invalid credentials' },
@@ -14,6 +18,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Verify password
     const isValid = await verifyPassword(password, user.password);
     if (!isValid) {
       return NextResponse.json(
@@ -22,11 +27,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Generate JWT token
     const token = generateToken(user.id, user.email, user.role);
 
+    // Create response with cookie
     const response = NextResponse.json({
       message: 'Login successful',
-      user: { id: user.id, email: user.email, name: user.name, role: user.role }
+      user: { 
+        id: user.id, 
+        email: user.email, 
+        name: user.name, 
+        role: user.role 
+      }
     });
 
     // Set the token as an HTTP-only cookie

@@ -69,7 +69,7 @@ export default function ContactPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
             <p className="text-xl text-gray-600">
-              Have questions or need support? We're here to help you with any inquiries.
+              Have questions or need support? We&#39;re here to help you with any inquiries.
             </p>
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">How do I purchase tickets?</h3>
               <p className="text-gray-600">
                 Simply browse events, select your tickets, and complete the secure checkout process. 
-                You'll receive your digital tickets instantly.
+                You&#39;ll receive your digital tickets instantly.
               </p>
             </div>
             
@@ -240,7 +240,7 @@ export default function ContactPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">What if an event is canceled?</h3>
               <p className="text-gray-600">
-                You'll receive a full refund automatically if an event is canceled. 
+                You&#39;ll receive a full refund automatically if an event is canceled. 
                 We process refunds within 5-7 business days.
               </p>
             </div>
